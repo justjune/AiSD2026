@@ -1,0 +1,23 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -I../L0306_110
+
+TARGET = L0309_112.exe
+OBJS = L0309_112.o L0309_112test.o ../L0306_110/L0306_110.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+L0309_112.o: L0309_112.cpp L0309_112.hpp ../L0306_110/L0306_110.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+L0309_112test.o: L0309_112test.cpp L0309_112.hpp ../L0306_110/L0306_110.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+../L0306_110/L0306_110.o: ../L0306_110/L0306_110.cpp ../L0306_110/L0306_110.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f $(OBJS) $(TARGET)
