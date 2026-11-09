@@ -1,10 +1,13 @@
-CXX      = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -I../L0306_110
+CXX = g++
+CXXFLAGS = -std=c++17 -I../L0306_110
 
-all: L0308_111.exe
+TARGET = L0308_111.exe
+OBJS = L0308_111.o L0308_111test.o ../L0306_110/L0306_110.o
 
-L0308_111.exe: L0308_111.o L0308_111test.o ../L0306_110/L0306_110.o
-	$(CXX) $(CXXFLAGS) -o $@ $^
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 L0308_111.o: L0308_111.cpp L0308_111.hpp ../L0306_110/L0306_110.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -17,4 +20,4 @@ L0308_111test.o: L0308_111test.cpp L0308_111.hpp ../L0306_110/L0306_110.hpp
 
 .PHONY: clean
 clean:
-	rm -f *.o L0308_111.exe ../L0306_110/L0306_110.o
+	rm -f $(OBJS) $(TARGET)
