@@ -4,7 +4,7 @@
 using namespace std;
 
 void initialize_graph(graph *g, bool directed) {
-    int i;                /* Счетчик */
+    int i;
 
     g->nvertices = 0;
     g->nedges = 0;
@@ -15,6 +15,6 @@ void initialize_graph(graph *g, bool directed) {
     }
 
     for (i = 1; i <= MAXV; i++) {
-        g->edges[i] = NULL;
+        g->edges[i] = nullptr;
     }
 }

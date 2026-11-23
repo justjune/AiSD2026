@@ -8,7 +8,6 @@ int main() {
 
     graph g;
 
-    // Тест 1: неориентированный граф
     cout << "Тест 1: неориентированный граф" << endl;
     initialize_graph(&g, false);
     g.nvertices = 5;
@@ -20,14 +19,12 @@ int main() {
     insert_edge(&g, 4, 5, false);
 
     cout << "nvertices = " << g.nvertices << endl;
-    cout << "nedges = " << g.nedges << endl;
-    cout << endl;
+    cout << "nedges = " << g.nedges << endl << endl;
 
     print_graph(&g);
 
     cout << endl << "===================" << endl;
 
-    // Тест 2: ориентированный граф
     cout << "Тест 2: ориентированный граф" << endl;
     initialize_graph(&g, true);
     g.nvertices = 4;
@@ -38,8 +35,7 @@ int main() {
     insert_edge(&g, 3, 4, true);
 
     cout << "nvertices = " << g.nvertices << endl;
-    cout << "nedges = " << g.nedges << endl;
-    cout << endl;
+    cout << "nedges = " << g.nedges << endl << endl;
 
     print_graph(&g);
 

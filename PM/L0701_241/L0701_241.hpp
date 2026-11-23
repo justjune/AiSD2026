@@ -2,20 +2,20 @@
 #ifndef L0701_241_HPP
 #define L0701_241_HPP
 
-#define MAXV 100              /* Максимальное количество вершин */
+#define MAXV 100
 
 struct edgenode {
-    int y;                    /* Номер соседней вершины */
-    int weight;               /* Вес ребра, если есть */
-    struct edgenode *next;    /* Следующее ребро в списке */
+    int y;
+    int weight;
+    edgenode *next;
 };
 
- struct graph{
-    edgenode *edges[MAXV+1];  /* Массив указателей(для каждой вершины свой список рёбер) */
-    int degree[MAXV+1];       /* Количество соседей каждой вершины */
-    int nvertices;            /* Количество вершин в графе */
-    int nedges;               /* Количество ребер в графе */
-    int directed;             /* Граф ориентированный? */
+struct graph {
+    edgenode *edges[MAXV+1];
+    int degree[MAXV+1];
+    int nvertices;
+    int nedges;
+    bool directed;
 };
 
 #endif
