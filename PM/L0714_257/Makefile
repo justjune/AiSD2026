@@ -1,0 +1,23 @@
+SHELL := cmd.exe
+
+EXEFILE = L0714_257.exe
+OBJFILES = L0701_241_L0709_253.o L0714_257.o L0714_257main.o
+
+$(EXEFILE): $(OBJFILES)
+	$(CXX) -o $(EXEFILE) $(OBJFILES)
+
+L0701_241_L0709_253.o: ../L0710_254/L0701_241_L0709_253.cpp
+	$(CXX) -c ../L0710_254/L0701_241_L0709_253.cpp
+
+L0714_257.o: L0714_257.cpp
+	$(CXX) -c L0714_257.cpp
+
+L0714_257main.o: L0714_257main.cpp
+	$(CXX) -c L0714_257main.cpp
+
+.PHONY: clean run all
+clean:
+	rm -f $(OBJFILES) $(EXEFILE)
+run:
+	$(EXEFILE)
+all: $(EXEFILE) run clean
