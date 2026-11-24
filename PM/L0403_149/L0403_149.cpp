@@ -1,17 +1,7 @@
 //L0403_149 Вставка элемента в пирамиду
 //Тюхтин Георгий, МЕН-253201
 
-#include <iostream>
-
-class priority_queue {     //класс, с которым работает алгоритм
-public:                    
-	int q[1024 + 1];       //собственно, пирамида
-	size_t n;              //размер пирамиды
-	priority_queue() {
-		n = 0;
-	};
-	~priority_queue() {};
-};
+#include "L0403_149.hpp"
 
 int pq_parent(int n) { //вспомогательная функция
 	if (n == 1) {

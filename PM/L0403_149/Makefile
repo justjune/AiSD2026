@@ -1,17 +1,20 @@
 SHELL := cmd.exe
-L0403149o=L0403_149.o L0403_149main.o
-L0403149.exe: $(L0403149o)
-	$(CXX) -o L0403149.exe $(L0403149o)
+
+EXEFILE = L0403_149.exe
+OBJFILES = L0403_149.o L0403_149main.o
+
+$(EXEFILE): $(OBJFILES)
+	$(CXX) -o $(EXEFILE) $(OBJFILES)
 
 L0403_149.o: L0403_149.cpp
 	$(CXX) -c L0403_149.cpp
 
-L0403_149_main.o: L0403_149main.cpp L0403_149.hpp
+L0403_149main.o: L0403_149main.cpp
 	$(CXX) -c L0403_149main.cpp
 
 .PHONY: clean run all
 clean:
-	$(RM) $(objects) $(L0403149o) m.exe L0403149.exe
+	rm -f $(OBJFILES) $(EXEFILE)
 run:
-	L0403149.exe
-all: L0403149.exe run clean
+	$(EXEFILE)
+all: $(EXEFILE) run clean

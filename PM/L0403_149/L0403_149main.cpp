@@ -1,7 +1,6 @@
 //L0403_149 Вставка элемента в пирамиду
 //Тюхтин Георгий, МЕН-253201
 
-#include <iostream>
 #include "L0403_149.hpp"
 int main() {
 	srand(time(0));
