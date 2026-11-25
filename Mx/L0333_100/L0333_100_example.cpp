@@ -1,4 +1,4 @@
-#Черев алексей МЕН-250705
+//Черев алексей МЕН-250705
 #include <iostream>
 #include "L0333_100.h"
 
@@ -13,7 +13,7 @@ int main() {
         std::cout << current->item << " ";
         current = current->next;
     }
-    cout << "\n";
+    std::cout << "\n";
     insert_list(head, 5);
 
     std::cout << "list after adding: ";
